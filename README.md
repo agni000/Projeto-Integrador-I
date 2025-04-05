@@ -12,7 +12,6 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 
 ---
 
-
 ## ⚙️ Instalação do Ambiente (Ubuntu)
 
 ### 0. Instalar o mySql-server
@@ -79,6 +78,17 @@ sudo systemctl restart zabbix-server zabbix-agent apache2
 sudo systemctl enable zabbix-server zabbix-agent apache2
 ```
 
+### 8. Possíveis erros durante a instalação
+
+- Tenha certeza de não interromper a fase 4 do processo, é a fase mais demorada dada a necessidade de importar uma quantidade considerável de tabelas. 
+- É possível que durante o processo seja necessária a instalação da biblioteca 'libldap', para isso encontre a versão disponível no seu sistema:
+
+```bash
+sudo apt update
+apt search libldap
+sudo apt install libldap<versão>
+```
+
 ---
 
 ## ☁️ Instalação do Mosquitto (MQTT Broker)
@@ -91,7 +101,7 @@ sudo systemctl enable mosquitto
 
 ## 🔌 Hardware Utilizado
 
-> ⚠️ Atualizar esta parte gradativamente.
+> ⚠️ Atualizar esta parte conforme o projeto avança.
 
 ### Microcontrolador:
 
@@ -113,7 +123,7 @@ sudo systemctl enable mosquitto
 
 ---
 
-## 🛠️ A Fazer
+## 🛠️ A fazer
 
 - [X] Escolher modelo definitivo do ESP32  
 - [ ] Definir sensores e conexões  
