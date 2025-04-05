@@ -1,6 +1,6 @@
 # Projeto ESP32 LoRa com MQTT para Zabbix
 
-Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo **ESP32 LoRa**, enviando essas informações via protocolo **MQTT** para o **Zabbix**, com o **Mosquitto** funcionando como broker MQTT. A comunicação é feita localmente e permite o monitoramento em tempo real através do Zabbix, além da possibilidade de enviar comandos de controle ao dispositivo.
+Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo **ESP32 LoRa**, enviando essas informações via protocolo **MQTT** para o **Zabbix**, com o **Mosquitto** funcionando como broker MQTT. Estamos avaliando a possibilidade de incluir no projeto, para torná-lo mais útil, a utilização do Dragino Gateway LoRa. 
 
 ---
 
@@ -12,56 +12,67 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 
 ---
 
-## 📦 Estrutura do Projeto
 
-```
-esp32-lora-mqtt-zabbix/
-├── firmware/                # Código do ESP32
-├── scripts/                 # Scripts para integração com Zabbix
-├── docs/                    # Documentações, esquemas, imagens
-├── README.md                # Este arquivo
-```
+## ⚙️ Instalação do Ambiente (Ubuntu)
 
----
-
-## ⚙️ Instalação do Ambiente
-
-### 1. Zabbix Server no Linux Mint
+### 0. Instalar o mySql-server
 
 ```bash
 sudo apt update
 sudo apt install mysql-server
-sudo apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
 ```
 
-### 2. Configuração do Banco de Dados (MySQL)
+### 1. Instalação do repositório Zabbix
 
 ```bash
-sudo mysql -uroot -p
-
-# Dentro do mysql:
-CREATE DATABASE zabbix character set utf8mb4 collate utf8mb4_bin;
-CREATE USER 'zabbix'@'localhost' IDENTIFIED BY 'senha_segura';
-GRANT ALL PRIVILEGES ON zabbix.* TO 'zabbix'@'localhost';
-FLUSH PRIVILEGES;
-EXIT;
+sudo -s
+wget https://repo.zabbix.com/zabbix/7.2/release/ubuntu/pool/main/z/zabbix-release/zabbix-release_latest_7.2+ubuntu24.04_all.deb
+dpkg -i zabbix-release_latest_7.2+ubuntu24.04_all.deb
+apt update
 ```
 
-### 3. Importando os dados iniciais
+### 2. Instalação do servidor, o frontend e o agente Zabbix
 
 ```bash
-zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql -uzabbix -p zabbix
+apt install zabbix-server-mysql zabbix-frontend-php zabbix-apache-conf zabbix-sql-scripts zabbix-agent
 ```
 
-### 4. Editar o arquivo de configuração do Zabbix
+### 3. Configuração do Banco de Dados (MySQL)
 
 ```bash
-sudo nano /etc/zabbix/zabbix_server.conf
+mysql -uroot -p
+password
+mysql> create database zabbix character set utf8mb4 collate utf8mb4_bin;
+mysql> create user zabbix@localhost identified by 'password';
+mysql> grant all privileges on zabbix.* to zabbix@localhost;
+mysql> set global log_bin_trust_function_creators = 1;
+mysql> quit;
+```
+
+### 4. Importando os dados iniciais ~ Esta parte pode demorar de 5 até 15 minutos.
+
+```bash
+zcat /usr/share/zabbix/sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p zabbix
+```
+
+### 5. Desabilitar a opção 'log_bin_trust_function_creators' após importar o banco de dados
+
+```bash
+mysql -uroot -p
+password
+mysql> set global log_bin_trust_function_creators = 0;
+mysql> quit;
+```
+
+### 6. Editar o arquivo de configuração do Zabbix
+
+```bash
+sudo gedit /etc/zabbix/zabbix_server.conf
 # Atualizar:
-DBPassword=senha_segura
+DBPassword=password
 ```
 
-### 5. Iniciar os serviços
+### 7. Iniciar os serviços
 
 ```bash
 sudo systemctl restart zabbix-server zabbix-agent apache2
@@ -76,19 +87,11 @@ sudo systemctl enable zabbix-server zabbix-agent apache2
 sudo apt install mosquitto mosquitto-clients
 sudo systemctl enable mosquitto
 ```
-
-### Testar a comunicação:
-
-```bash
-mosquitto_pub -t test/topic -m "Mensagem de teste"
-mosquitto_sub -t test/topic
-```
-
 ---
 
 ## 🔌 Hardware Utilizado
 
-> ⚠️ Preencher esta seção posteriormente com os detalhes reais do projeto.
+> ⚠️ Atualizar esta parte gradativamente.
 
 ### Microcontrolador:
 
@@ -98,13 +101,11 @@ mosquitto_sub -t test/topic
 
 ### Sensores:
 
-- **Sensor 1:** `Nome do sensor (ex: DHT11, DHT22)`  
+- **Sensor 1:** `DHT22`  
   - Tipo: Temperatura / Umidade  
-  - Pinos utilizados: `GPIO__`
 
 - **Sensor 2:** `Nome do sensor`  
   - Tipo: `___`  
-  - Pinos utilizados: `GPIO__`
 
 ### Gateway LoRa:
 
@@ -112,29 +113,9 @@ mosquitto_sub -t test/topic
 
 ---
 
-## 🔄 Integração com o Zabbix
-
-- O ESP32 publica os dados no tópico MQTT: `esp32/sensores`
-- Um script ou template Zabbix com suporte a MQTT (usando por exemplo `zabbix_sender` ou `MQTT Gateway`) coleta os dados e insere no Zabbix
-- Comandos de controle também podem ser enviados ao ESP32 via MQTT
-
----
-
-## 📈 Exemplo de Payload (JSON)
-
-```json
-{
-  "temperatura": 24.5,
-  "umidade": 60.2,
-  "oxigenio": 19.5
-}
-```
-
----
-
 ## 🛠️ A Fazer
 
-- [ ] Escolher modelo definitivo do ESP32  
+- [X] Escolher modelo definitivo do ESP32  
 - [ ] Definir sensores e conexões  
 - [ ] Criar templates no Zabbix  
 - [ ] Automatizar envio/recebimento MQTT no Zabbix  
