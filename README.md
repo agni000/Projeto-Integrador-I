@@ -129,6 +129,7 @@ sudo systemctl enable mosquitto
 - [ ] Definir sensores e conexões  
 - [ ] Criar templates no Zabbix  
 - [ ] Automatizar envio/recebimento MQTT no Zabbix  
+- [ ] A definir[...]  
 
 ---
 
