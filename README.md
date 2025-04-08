@@ -105,14 +105,14 @@ sudo systemctl enable mosquitto
 
 ### Microcontrolador:
 
-- Modelo: `ESP32 LoRa (ex: Heltec, TTGO, LilyGO...)`
-- Frequência: `___ MHz`
-- Tensão de operação: `___ V`
-
+- Modelo: `ESP32 LoRa TTGO-LoRa T-Beam`
+- Referência: https://i.imgur.com/dnENtkw.jpeg
+- 
 ### Sensores:
 
 - **Sensor 1:** `DHT22`  
   - Tipo: Temperatura / Umidade  
+  - Referência: https://www.alldatasheet.com/datasheet-pdf/view/1132459/ETC2/DHT22.html
 
 - **Sensor 2:** `Nome do sensor`  
   - Tipo: `___`  
