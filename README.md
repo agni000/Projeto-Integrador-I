@@ -107,7 +107,7 @@ sudo systemctl enable mosquitto
 
 - Modelo: `ESP32 LoRa TTGO-LoRa T-Beam`
 - Referência: https://i.imgur.com/dnENtkw.jpeg
-- 
+
 ### Sensores:
 
 - **Sensor 1:** `DHT22`  
@@ -116,7 +116,9 @@ sudo systemctl enable mosquitto
 
 - **Sensor 2:** `Nome do sensor`  
   - Tipo: `___`  
-
+  - Referência: `___`  
+  
+  
 ### Gateway LoRa:
 
 - Modelo: `___`
