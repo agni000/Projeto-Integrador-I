@@ -38,13 +38,9 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 
 ---
 
-## 🛠️ A fazer
+## Documentação
 
-- [X] Escolher modelo definitivo do ESP32  
-- [ ] Definir sensores e conexões  
-- [ ] Criar templates no Zabbix  
-- [ ] Automatizar envio/recebimento MQTT no Zabbix  
-- [ ] A definir[...]  
+- 📘 [Configuração do Zabbix](ZABBIX.md)
 
 ---
 
