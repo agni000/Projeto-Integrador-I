@@ -11,11 +11,11 @@
 - Corrente de alimentação: 1 a 1.5 mA
 - Período de amostragem: 2 segundos
 
-| **DHT pin** | **Connect to**                                                                 |
+| **Pino** | **Conexão**                                                                 |
 |-------------|---------------------------------------------------------------------------------|
 | 1           | `3.3V`                                                                          |
-| 2           | Any digital GPIO; also connect a 10k Ohm pull-up resistor                       |
-| 3           | Don’t connect                                                                   |
+| 2           | Qualquer pino de entrada do ESP; resistor de pull-up de 10k Ohm                   |
+| 3           | N/A                                                                   |
 | 4           | `GND`                                                                           |
 
 
