@@ -1,5 +1,5 @@
 <p align="center">
-# Projeto ESP32 LoRa com MQTT para Zabbix.
+Projeto ESP32 LoRa com MQTT para Zabbix.
 </p>
 
 Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo **ESP32 LoRa**, enviando essas informações via protocolo **MQTT** para o **Zabbix**, com o **Mosquitto** funcionando como broker MQTT. Estamos avaliando a possibilidade de incluir no projeto, para torná-lo mais útil, a utilização do Dragino Gateway LoRa. 
