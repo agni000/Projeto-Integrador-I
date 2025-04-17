@@ -12,6 +12,7 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 - **MQTT (Mosquitto)** – Protocolo leve de mensagens usado para envio dos dados.  
 - **Zabbix** – Sistema de monitoramento de redes, utilizado para visualizar os dados.  
 - **Arduino IDE 1.8.19** – Ambiente de desenvolvimento.  
+- **Sensores** – DHT22, GY-BMP280, MPU6050.  
 
 ---
 
@@ -24,3 +25,4 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 - 📱  [ESP32 LoRa](ESP32.md)
 - 🔌  [DHT22](DHT22.md)
 - 🔌  [GY-BMP280](BMP280.md)
+- 🔌  [MPU6050](MPU6050.md)
