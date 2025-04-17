@@ -29,6 +29,6 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 
 ## Protótipo 
 
-<img src="README.assets/MPU6050.jpeg" width="756" height="469">
+<img src="README.assets/prototipo.png" width="756" height="469">
 
 
