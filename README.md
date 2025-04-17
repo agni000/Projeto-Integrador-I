@@ -26,3 +26,9 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 - 🔌  [DHT22](DHT22.md)
 - 🔌  [GY-BMP280](BMP280.md)
 - 🔌  [MPU6050](MPU6050.md)
+
+## Protótipo 
+
+<img src="README.assets/MPU6050.jpeg" width="756" height="469">
+
+
