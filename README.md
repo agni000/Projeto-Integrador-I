@@ -22,6 +22,7 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 ## Documentação
 
 - 📘  [Configuração do Zabbix](ZABBIX.md)
+- 📘  [Comunicação MQTT-Zabbix](MQTT.md)
 - 📱  [ESP32 LoRa](ESP32.md)
 - 🔌  [DHT22](DHT22.md)
 - 🔌  [GY-BMP280](BMP280.md)
