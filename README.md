@@ -17,7 +17,7 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 ---
 
 ## Arquitetura
-- A definir imagem
+<img src="README.assets/arquitetura.png" width="756" height="469">
 
 ## Documentação
 
