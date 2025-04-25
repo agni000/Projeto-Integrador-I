@@ -17,7 +17,9 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 ---
 
 ## Arquitetura
-<img src="README.assets/arquitetura.png" width="756" height="469">
+<div align="center">
+    <img src="README.assets/arquitetura.png">
+</div>
 
 ## Documentação
 
@@ -29,7 +31,7 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 - 🔌  [MPU6050](MPU6050.md)
 
 ## Protótipo 
-
-<img src="README.assets/prototipo.png" width="756" height="469">
-
+<div align="center">
+    <img src="README.assets/prototipo.png">
+</div>
 
