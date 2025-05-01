@@ -25,7 +25,7 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 
 - 📘  [Configuração do Zabbix](ZABBIX.md)
 - 📘  [Comunicação MQTT-Zabbix](MQTT.md)
-- 📚  [Source](src/)
+- 📚  [Source](https://github.com/agni000/Projeto-Integrador-I/tree/main/src)
 - 📱  [ESP32 LoRa](ESP32.md)
 - 🔌  [DHT22](DHT22.md)
 - 🔌  [GY-BMP280](BMP280.md)
