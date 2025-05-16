@@ -37,6 +37,6 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 
 ## Protótipo 
 <div align="center">
-    <img src="README.assets/prototipo.png">
+    <img src="README.assets/prototipo.jpg">
 </div>
 
