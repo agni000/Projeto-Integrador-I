@@ -1,8 +1,11 @@
 #include "wifi_setup.h"
 
-const char* ssid = "aquietic";
-const char* password = "12345678";
+const char* ssid = "WiFiID";
+const char* password = "senha";
 
+/**
+ *@brief Função de configuração para a rede do broker.
+ */
 void setupWiFi() {
   delay(10);
   Serial.println();

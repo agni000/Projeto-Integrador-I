@@ -26,8 +26,8 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 
 - 📘  [Configuração do Zabbix](ZABBIX.md)
 - 📘  [Comunicação MQTT-Zabbix](MQTT.md)
-- 📚  [Source-Sender](ttgoSender/)
-- 📚  [Source-Receiver](heltecReceiver/)
+- 📚  [Source-Sender](heltecSender/)
+- 📚  [Source-Receiver](ttgoReceiver/)
 - 📱  [TTGO LoRa](TTGO.md)
 - 📱  [Heltec v3 LoRa](HELTECV3.md)
 - 🔌  [DHT22](DHT22.md)

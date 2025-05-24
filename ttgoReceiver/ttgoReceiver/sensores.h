@@ -6,6 +6,7 @@
 #include <Adafruit_Sensor.h>
 #include <DHT.h>
 
+/// Struct que contém todos os dados coletados nos sensores.
 struct LeituraSensores {
   float tempDHT;
   float umidDHT;
@@ -18,6 +19,5 @@ struct LeituraSensores {
 
 void initSensores();
 LeituraSensores lerSensores();
-void publicarDadosMQTT(const LeituraSensores& leitura);
 
 #endif

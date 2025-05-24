@@ -1,14 +1,21 @@
 #include "sensores.h"
 #include "mqtt_setup.h"
-
-Adafruit_MPU6050 mpu;
-Adafruit_BMP280 bmp;
 #define DHTPIN 4
 #define DHTTYPE DHT22
+
+Adafruit_MPU6050 mpu;
+Adafruit_BMP280 bmp(&sensoresI2C);
+
 DHT dht(DHTPIN, DHTTYPE);
 
+/// Usa o barramento definido no heltecSender.ino
+extern TwoWire sensoresI2C;
+
+/**
+ * @brief Função que inicializa os sensores.
+ */
 void initSensores() {
-  if (!mpu.begin()) {
+  if (!mpu.begin(0x68, &sensoresI2C)) {
     Serial.println("Erro ao iniciar o MPU6050!");
     while (1);
   }
@@ -31,6 +38,10 @@ void initSensores() {
   Serial.println("Sensores iniciados com sucesso.");
 }
 
+/**
+ * @brief Função que coleta os dados dos sensores.
+ * @return Struct do tipo LeituraSensores.
+ */
 LeituraSensores lerSensores() {
   LeituraSensores leitura;
 
@@ -56,10 +67,4 @@ LeituraSensores lerSensores() {
   }
 
   return leitura;
-}
-
-void publicarDadosMQTT(const LeituraSensores& l) {
-  mqttClient.publish("zabbix/temperatura", String(l.tempDHT, 2).c_str());
-  mqttClient.publish("zabbix/umidade", String(l.umidDHT, 2).c_str());
-  mqttClient.publish("zabbix/pressao", String(l.pressaoBMP, 2).c_str());
 }
