@@ -2,7 +2,7 @@
 Projeto ESP32 LoRa com MQTT para Zabbix.
 </p>
 
-Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo **ESP32 LoRa TTGO**, enviando essas informações via LoRa para um **ESP32 LoRa Heltec v3**, este segundo dispositivo envia, por sua vez, os dados através do protocolo **MQTT** para o **Zabbix** com o **Mosquitto** funcionando como broker MQTT. 
+Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo **ESP32 LoRa Heltec v3**, enviando essas informações via LoRa para um **ESP32 LoRa TTGO**, este segundo dispositivo envia, por sua vez, os dados através do protocolo **MQTT** para o **Zabbix** com o **Mosquitto** funcionando como broker MQTT. 
 
 ---
 
