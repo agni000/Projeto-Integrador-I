@@ -19,7 +19,7 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 
 ## Arquitetura
 <div align="center">
-    <img src="README.assets/arquitetura.jpg">
+    <img src="README.assets/arquitetura.png">
 </div>
 
 ## Documentação
