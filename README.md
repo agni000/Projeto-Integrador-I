@@ -29,7 +29,7 @@ Os dados coletados (temperatura, umidade, pressão e movimento) são transmitido
 <div align="center">
     <img src="README.assets/esquemaConexao.png">
 </div>
-Este diagrama mostra a ligação dos três sensores à placa microcontroladora **ESP32 LoRa Heltec V3**, a alimentação de todos os componentes é feita com **3.3V**. 
+Este diagrama mostra a ligação dos três sensores à placa microcontroladora ESP32 LoRa Heltec V3, a alimentação de todos os componentes é feita com 3.3V. 
 
 ### 📦 Componentes Conectados:
 
