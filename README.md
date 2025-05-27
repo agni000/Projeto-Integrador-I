@@ -53,6 +53,41 @@ Este diagrama mostra a ligação dos três sensores à placa microcontroladora E
 
 ---
 
+## Dashboard
+<div align="center">
+    <img src="README.assets/dashboard.png">
+</div>
+Exemplo de Dashboard criado no Zabbix com os dados coletados. 
+
+### 🛠️ Como criar o dashboard no Zabbix
+
+> ⚠️ **Pré-requisito:** Certifique-se de que já existe um **host** configurado no Zabbix (ex: `ESP32_SENSOR`) com os **itens** correspondentes às medições dos sensores (como `temperatura`, `umidade`, `pressao`, `accX`, `accY`, `accZ`). Esses itens devem estar sendo atualizados corretamente via agente MQTT.
+
+#### Criando um host e itens:
+
+1. Vá para **Monitoramento > Hosts** e clique em **Criar host**.
+2. Defina o nome (ex: `ESP32_SENSOR`) e vincule-o a um grupo.
+3. Em **Itens**, crie entradas para cada sensor:
+   - Tipo: `Zabbix trapper`.
+   - Nome do item (ex: `Temperatura`), chave (ex: `temperatura`), tipo de dado (`float`, `integer`, etc).
+   - Intervalo de atualização (caso aplicável).
+4. Confirme se os itens estão recebendo dados (veja em **Dados recentes**).
+
+#### Criando o dashboard:
+
+1. Acesse **Dashboards**.
+2. Clique em **Criar dashboard**.
+3. Escolha um nome (ex: `ESP32_SENSOR Dashboard`) e salve.
+4. Clique em **Adicionar widget** e adicione os tipos que desejar, por ex.:
+   - **Gráfico (clássico)** para pressão, temperatura, umidade e aceleração.
+   - **Gauge** para as medições dos eixos do acelerômetro (accX, accY, accZ).
+5. Para cada widget:
+   - Selecione o host correspondente (ex: `ESP32_SENSOR`).
+   - Escolha o item desejado (ex: `accX`, `umidade`, etc).
+   - Ajuste os limites de escala conforme necessário para facilitar a visualização.
+
+---
+
 ## Documentação
 
 - 📘  [Configuração do Zabbix](ZABBIX.md)
@@ -65,6 +100,7 @@ Este diagrama mostra a ligação dos três sensores à placa microcontroladora E
 - 🔌  [GY-BMP280](BMP280.md)
 - 🔌  [MPU6050](MPU6050.md)
 
+---
 
 ## Protótipo 
 <div align="center">
