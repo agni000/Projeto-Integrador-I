@@ -21,6 +21,37 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 <div align="center">
     <img src="README.assets/arquitetura.png">
 </div>
+Os dados coletados (temperatura, umidade, pressão e movimento) são transmitidos sem fio para um gateway baseado em ESP32 LoRa, que publica as informações via MQTT para um broker Mosquitto. A partir daí, os dados são integrados ao Zabbix, permitindo monitoramento em tempo real. 
+
+---
+
+## Esquema de conexão
+<div align="center">
+    <img src="README.assets/esquemaConexao.png">
+</div>
+Este diagrama mostra a ligação dos três sensores à placa microcontroladora **ESP32 LoRa Heltec V3**. A alimentação de todos os componentes é feita com **3.3V**.
+
+### 📦 Componentes Conectados:
+
+#### 1. DHT22 (Sensor de Temperatura e Umidade)
+- Alimentado com **3.3V**
+- Pino de dados conectado ao **GPIO4**
+- Resistor de **10kΩ pull-up** entre o pino de dados e 3.3V
+
+#### 2. BMP280 (Sensor de Pressão e Temperatura - I2C)
+- **SDA** → **GPIO41**
+- **SCL** → **GPIO42**
+- Alimentado com **3.3V**
+- Outros pinos (CSB, SDO) não utilizados (I2C padrão)
+
+#### 3. MPU6050 (Acelerômetro e Giroscópio - I2C)
+- Compartilha o barramento I2C com o BMP280:
+  - **SDA** → **GPIO41**
+  - **SCL** → **GPIO42**
+- Alimentado com **3.3V**
+- Pinos **XDA/XCL** não utilizados (para comunicação auxiliar com outros sensores)
+
+---
 
 ## Documentação
 
