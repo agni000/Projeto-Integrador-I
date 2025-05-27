@@ -42,7 +42,7 @@ from pyzabbix import ZabbixSender, ZabbixMetric
 
 ZABBIX_SERVER = '127.0.0.1'
 ZABBIX_HOST = 'ESP32_SENSOR'
-MQTT_TOPICS = [("zabbix/temperatura", 0), ("zabbix/umidade", 0), ("zabbix/pressao", 0)]
+MQTT_TOPICS = [("zabbix/temperatura", 0), ("zabbix/umidade", 0), ("zabbix/pressao", 0), ("zabbix/accX", 0), ("zabbix/accY", 0), ("zabbix/accZ", 0)]
 
 def on_message(client, userdata, msg):
     try:
