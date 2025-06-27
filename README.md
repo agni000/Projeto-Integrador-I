@@ -86,6 +86,14 @@ Exemplo de Dashboard criado no Zabbix com os dados coletados.
    - Escolha o item desejado (ex: `accX`, `umidade`, etc).
    - Ajuste os limites de escala conforme necessário para facilitar a visualização.
 
+   
+---
+
+## Diagrama de Classes UML
+<div align="center">
+    <img src="README.assets/diagramaDeClassesUML.png">
+</div>
+
 ---
 
 ## Documentação
@@ -107,3 +115,9 @@ Exemplo de Dashboard criado no Zabbix com os dados coletados.
     <img src="README.assets/prototipo.jpg">
 </div>
 
+---
+
+## Placa universal
+<div align="center">
+    <img src="README.assets/placaUniversal.jpg">
+</div>
