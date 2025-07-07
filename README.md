@@ -123,3 +123,16 @@ O diagrama é uma generalização do projeto com o intuito de fornecer uma visã
 <div align="center">
     <img src="README.assets/placaUniversal.jpg">
 </div>
+
+## Limitações
+
+Durante a implementação do projeto encontrados algumas dificuldades que merecem menção: 
+
+- **Biblioteca padrão para o Heltec V3 não está funcional**  
+  Embora o Hardware do Heltec V3 seja bastante útil, o mesmo não pode ser dito acerca do software oficial disponibilizado pelo fabricante: além da documentação ser ruim, o método de inicialização possui erros que quebram a execução do programa.  
+  _Solução:_ Utilizamos, separadamente, as bibliotecas RadioLib.h e HT_SSD1306Wire.h para módulo LoRa e display OLED, respectivamente. Ambas estão disponíveis na IDE do Arduino e permitem a inicialização correta do dispositivo.
+
+- **Barramento I²C principal ocupado pelo OLED**  
+  O barramento hardware I²C (SDA/SCL) padrão, para o Heltec V3, é dedicado ao OLED, impossibilitando a conexão direta dos sensores.   
+  _Solução:_ Criamos um segundo barramento I²C através do código para os pinos gerais 41 e 42, por meio da biblioteca Wire.h.
+
