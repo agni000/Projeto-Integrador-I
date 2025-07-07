@@ -94,6 +94,8 @@ Exemplo de Dashboard criado no Zabbix com os dados coletados.
     <img src="README.assets/diagramaDeClassesUML.png">
 </div>
 
+O diagrama é uma generalização do projeto com o intuito de fornecer uma visão geral de como o código foi elaborado.
+
 ---
 
 ## Documentação
