@@ -126,7 +126,7 @@ O diagrama é uma generalização do projeto com o intuito de fornecer uma visã
 
 ## Limitações
 
-Durante a implementação do projeto encontrados algumas dificuldades que merecem menção: 
+Durante a implementação do projeto encontramos algumas dificuldades que merecem menção: 
 
 - **Biblioteca padrão para o Heltec V3 não está funcional**  
   Embora o Hardware do Heltec V3 seja bastante útil, o mesmo não pode ser dito acerca do software oficial disponibilizado pelo fabricante: além da documentação ser ruim, o método de inicialização possui erros que quebram a execução do programa.  
