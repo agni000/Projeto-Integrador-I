@@ -1,8 +1,8 @@
 <p align="center">
-Projeto ESP32 LoRa com MQTT para Zabbix.
+Protótipo para monitoramento de bovinos a pasto.
 </p>
 
-Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo **ESP32 LoRa Heltec v3**, enviando essas informações via LoRa para um **ESP32 LoRa TTGO**, este segundo dispositivo envia, por sua vez, os dados através do protocolo **MQTT** para o **Zabbix** com o **Mosquitto** funcionando como broker MQTT. 
+Este projeto é baseado em um problema mais amplo, relacionado ao monitoramento de bovinos a pasto. A proposta é comprovar a viabilidade de coleta, transmissão e recepção de dados, dentro deste contexto, utilizando tecnologias de baixo custo e que permitam escalabilidade. Para isto, criamos uma placa baseada no funcionamento de um ESP32, capaz de se comunicar com outros dispositivos através da comunicação LoRa. Outros dispositivos podem ser Gateways ou nodos, permitindo integrar a informação coletada com  plataformas de monitoramento, além de replicar os dados para atingir distâncias maiores, se necessário. Utilizamos o Zabbix como plataforma de monitoramento e sensores para simular os dados coletados localmente, embora esta última parte seja uma abstração, ela de maneira alguma interfere na lógica da resolução do problema caso ele fosse aplicado na situação real. Para fazer a comunicação entre o Gateway e o Zabbix, utilizamos o protocólo MQTT.
 
 ---
 
@@ -21,7 +21,7 @@ Este projeto tem como objetivo adquirir dados de sensores utilizando um módulo 
 <div align="center">
     <img src="README.assets/arquitetura.png">
 </div>
-Os dados coletados (temperatura, umidade, pressão e movimento) são transmitidos sem fio para um gateway baseado em ESP32 LoRa, que publica as informações via MQTT para um broker Mosquitto. A partir daí, os dados são integrados ao Zabbix, permitindo monitoramento em tempo real. 
+Os dados coletados localmente pelo Heltec V3 são enviados através do LoRa para outro ESP32 receptor que funciona como um Gateway, conectando-se ao broker Mosquitto que faz o repasse de informações para o Zabbix através da biblioteca Paho MQTT, em Python. 
 
 ---
 
