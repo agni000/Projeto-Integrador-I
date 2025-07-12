@@ -129,6 +129,7 @@ O diagrama é uma generalização do projeto com o intuito de fornecer uma visã
 
 ## Limitações
 
+<p align="justify">
 Durante a implementação do projeto encontramos algumas dificuldades que merecem menção: 
 
 - **Biblioteca padrão para o Heltec V3 não está funcional**  
@@ -138,4 +139,5 @@ Durante a implementação do projeto encontramos algumas dificuldades que merece
 - **Barramento I²C principal ocupado pelo OLED**  
   O barramento hardware I²C (SDA/SCL) padrão, para o Heltec V3, é dedicado ao OLED, impossibilitando a conexão direta dos sensores.   
   _Solução:_ Criamos um segundo barramento I²C através do código para os pinos gerais 41 e 42, por meio da biblioteca Wire.h.
+</p>
 
